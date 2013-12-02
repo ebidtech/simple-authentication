@@ -25,12 +25,12 @@ class Authentication
     const DEFAULT_DESCRIPTION = '';
 
     /**
-     * @var bool|float|int|string
+     * @var mixed
      */
     protected $key;
 
     /**
-     * @var bool|float|int|string
+     * @var mixed
      */
     protected $secret;
 
@@ -40,8 +40,8 @@ class Authentication
     protected $description = '';
 
     /**
-     * @param string $key
-     * @param string $secret
+     * @param mixed
+     * @param mixed $secret
      * @param string $description
      *
      * @throws InvalidArgumentException
@@ -70,7 +70,7 @@ class Authentication
     }
 
     /**
-     * @return bool|float|int|string
+     * @return mixed
      */
     public function getKey()
     {
@@ -78,7 +78,7 @@ class Authentication
     }
 
     /**
-     * @return bool|float|int|string
+     * @return mixed
      */
     public function getSecret()
     {
