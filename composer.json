@@ -1,0 +1,25 @@
+{
+    "name": "ebidtech/simple-authentication",
+    "type": "library",
+    "description": "A simple authentication using key and secret",
+    "keywords": ["authentication", "php", "key", "secret"],
+    "homepage": "http://github.com/ebidtech/simple-authentication",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ebidtech",
+            "email": "developers@ebidtech.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "php": ">=5.4.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "3.7.*",
+        "satooshi/php-coveralls": "dev-master"
+    },
+    "autoload": {
+        "psr-0": { "EBT\\SimpleAuthentication": "src/" }
+    }
+}
