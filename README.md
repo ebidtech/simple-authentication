@@ -1,4 +1,4 @@
-# Compress #
+# Simple Authentication #
 
 A simple authentication library using a key and secret
 
