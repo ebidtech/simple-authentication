@@ -50,13 +50,13 @@ class Authentication
     {
         if (!is_scalar($key) || empty($key)) {
             throw new InvalidArgumentException(
-                sprintf('Key needs to be empty or not scalar, got type: "%s"', gettype($key))
+                sprintf('Key needs to be scalar and not empty, got type: "%s"', gettype($key))
             );
         }
 
         if (!is_scalar($secret) || empty($secret)) {
             throw new InvalidArgumentException(
-                sprintf('Secret needs to be empty or not scalar, got type: "%s"', gettype($secret))
+                sprintf('Secret needs to be scalar and not empty, got type: "%s"', gettype($secret))
             );
         }
 
