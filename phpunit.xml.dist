@@ -16,7 +16,7 @@
 
     <testsuites>
         <testsuite name="TestBundle Test Suite">
-            <directory>./tests/EBT/Compress/Tests</directory>
+            <directory>./tests/EBT/SimpleAuthentication/Tests</directory>
         </testsuite>
     </testsuites>
 
