@@ -9,11 +9,19 @@
  * file that was distributed with this source code.
  */
 
-namespace EBT\SimpleAuthentication\Exception;
+namespace EBT\SimpleAuthentication\Common;
 
 /**
- * AuthenticationException
+ * MatchableInterface
+ *
+ * @api
  */
-class AuthenticationException extends InvalidArgumentException
+interface MatchableInterface
 {
+    /**
+     * @param mixed $toCompare
+     *
+     * @return bool True in case it matches
+     */
+    public function match($toCompare);
 }
