@@ -48,4 +48,34 @@ class CredentialsConfigTest extends TestCase
             next($credentialsConfigArr);
         }
     }
+
+    public function testAuth()
+    {
+        $this->assertTrue($this->getCredentialConfig()->auth(new KeySecret('key1', 'secret1')));
+        $this->assertFalse($this->getCredentialConfig()->auth(new KeySecret('key1', 'wrong-secret')));
+        $this->assertFalse($this->getCredentialConfig()->auth(new KeySecret('absent-key', 'secret1')));
+    }
+
+    /**
+     * @expectedException \EBT\SimpleAuthentication\Exception\AuthenticationException
+     */
+    public function testAuthOrExceptionAbsentKey()
+    {
+        $this->getCredentialConfig()->authOrException(new KeySecret('absent-key', 'secret1'));
+    }
+
+    public function testAuthOrException()
+    {
+        $this->getCredentialConfig()->authOrException(new KeySecret('key1', 'secret1'));
+    }
+
+    protected function getCredentialConfig()
+    {
+        return new CredentialsConfig(
+            array(
+                new KeySecretConfig(new KeySecret('key1', 'secret1')),
+                new KeySecretConfig(new KeySecret('key2', 'secret2'))
+            )
+        );
+    }
 }

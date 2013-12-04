@@ -18,6 +18,7 @@ use EBT\Collection\IterableTrait;
 use EBT\Collection\CountableTrait;
 use EBT\Collection\GetCollectionTrait;
 use EBT\SimpleAuthentication\Exception\InvalidArgumentException;
+use EBT\SimpleAuthentication\Exception\AuthenticationException;
 
 /**
  * CredentialsConfig, collection of CredentialConfig
@@ -61,5 +62,37 @@ class CredentialsConfig implements CollectionDirectAccessInterface
         }
 
         $this->collection[$identifier] = $credentialConfig;
+    }
+
+    /**
+     * @param CredentialInterface $credential
+     *
+     * @return bool
+     */
+    public function auth(CredentialInterface $credential)
+    {
+        /** @var CredentialConfigInterface $credentialConfig */
+        foreach ($this as $credentialConfig) {
+            if ($credentialConfig->match($credential)
+                && $credentialConfig->isActive()
+                && !$credentialConfig->isExpired()
+                && !$credentialConfig->isLocked()) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    /**
+     * @param CredentialInterface $credential
+     *
+     * @throws AuthenticationException
+     */
+    public function authOrException(CredentialInterface $credential)
+    {
+        if (!$this->auth($credential)) {
+            throw AuthenticationException::fromCredential($credential);
+        }
     }
 }

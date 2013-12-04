@@ -85,9 +85,7 @@ class KeySecretConfig implements CredentialConfigInterface
     }
 
     /**
-     * @param CredentialInterface $toCompare
-     *
-     * @return bool True if there is a match
+     * {@inheritDoc}
      */
     public function match(CredentialInterface $toCompare)
     {

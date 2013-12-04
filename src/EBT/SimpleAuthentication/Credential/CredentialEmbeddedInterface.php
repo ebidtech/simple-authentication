@@ -24,7 +24,7 @@ interface CredentialEmbeddedInterface
     /**
      * @param CredentialInterface $toCompare
      *
-     * @return bool True if there is a match
+     * @return bool True if there is a match between the credential at config and the credential passed
      */
     public function match(CredentialInterface $toCompare);
 }
