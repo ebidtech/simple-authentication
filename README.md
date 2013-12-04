@@ -2,7 +2,7 @@
 
 A simple authentication library using a key and secret
 
-[![Latest Stable Version](https://poser.pugx.org/ebidtech/simple-authentication/v/stable.png)](https://packagist.org/packages/ebidtech/simple-authentication)
+[![Latest Stable Version](https://poser.pugx.org/ebidtech/simple-authentication/v/stable.png)](https://packagist.org/packages/ebidtech/simple-authentication) [![Build Status](https://travis-ci.org/ebidtech/simple-authentication.png?branch=v0.2.4)](https://travis-ci.org/ebidtech/simple-authentication)
 
 ## Requirements ##
 
