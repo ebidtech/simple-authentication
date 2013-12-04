@@ -2,6 +2,8 @@
 
 A simple authentication library using a key and secret
 
+[![Latest Stable Version](https://poser.pugx.org/ebidtech/simple-authentication/v/stable.png)](https://packagist.org/packages/ebidtech/simple-authentication)
+
 ## Requirements ##
 
 * PHP >= 5.4
