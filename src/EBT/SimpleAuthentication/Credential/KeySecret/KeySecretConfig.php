@@ -122,7 +122,7 @@ class KeySecretConfig implements CredentialConfigInterface
         }
 
         $active = isset($data[static::ACTIVE_KEY]) ? $data[static::ACTIVE_KEY] : static::DEFAULT_ACTIVE;
-        $expired = isset($data[static::EXPIRED_KEY]) ? $data[static::EXPIRED_KEY] : static::EXPIRED_KEY;
+        $expired = isset($data[static::EXPIRED_KEY]) ? $data[static::EXPIRED_KEY] : static::DEFAULT_EXPIRED;
         $locked = isset($data[static::LOCKED_KEY]) ? $data[static::LOCKED_KEY] : static::DEFAULT_LOCKED;
 
         return new static(

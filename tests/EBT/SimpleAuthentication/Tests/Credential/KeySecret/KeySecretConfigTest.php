@@ -49,6 +49,23 @@ class KeySecretConfigTest extends TestCase
         $this->assertFalse($keySecretConfig->isLocked());
     }
 
+    public function testDefaultsFromArray()
+    {
+        $keySecretConfig = KeySecretConfig::fromArray(
+            array(
+                KeySecretConfig::CREDENTIAL_KEY => array(
+                    KeySecret::KEY_KEY => 'key1',
+                    KeySecret::SECRET_KEY => 'secret1'
+                )
+            )
+        );
+
+
+        $this->assertTrue($keySecretConfig->isActive());
+        $this->assertFalse($keySecretConfig->isExpired());
+        $this->assertFalse($keySecretConfig->isLocked());
+    }
+
     public function testMatch()
     {
         $key = 'akey';
