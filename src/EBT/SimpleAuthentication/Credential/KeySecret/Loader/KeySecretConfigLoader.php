@@ -11,7 +11,7 @@
 
 namespace EBT\SimpleAuthentication\Credential\KeySecret\Loader;
 
-use EBT\SimpleAuthentication\Credential\KeySecret\KeySecretConfig;
+use EBT\SimpleAuthentication\Credential\KeySecret\KeySecretsConfig;
 use Symfony\Component\Config\Loader\LoaderInterface;
 use EBT\ConfigLoader\YamlFileLoader;
 use EBT\ConfigLoader\JsonFileLoader;
@@ -55,7 +55,7 @@ class KeySecretConfigLoader
      * @param mixed       $resource The resource
      * @param string|null $type     The resource type
      *
-     * @return KeySecretConfig
+     * @return KeySecretsConfig
      *
      * @throws InvalidArgumentException
      */
@@ -63,7 +63,7 @@ class KeySecretConfigLoader
     {
         foreach ($this->loaders as $loader) {
             if ($loader->supports($resource, $type)) {
-                return KeySecretConfig::fromArray($loader->load($resource, $type));
+                return KeySecretsConfig::fromArray($loader->load($resource, $type));
             }
         }
 
@@ -76,7 +76,7 @@ class KeySecretConfigLoader
             : gettype($type);
 
         throw new InvalidArgumentException(
-            sprintf('Cannot find a loader to the resource "%s" and type "%s', $resourceStr, $typeStr)
+            sprintf('Cannot find a loader to the resource "%s" and type "%s"', $resourceStr, $typeStr)
         );
     }
 
