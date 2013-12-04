@@ -9,19 +9,14 @@
  * file that was distributed with this source code.
  */
 
-namespace EBT\SimpleAuthentication\Common;
+namespace EBT\SimpleAuthentication\Common\Implementation;
 
 /**
- * MatchableInterface
- *
- * @api
+ * KeySecretTrait
  */
-interface MatchableInterface
+trait KeySecretTrait
 {
-    /**
-     * @param mixed $toCompare
-     *
-     * @return bool True in case it matches
-     */
-    public function match($toCompare);
+    use KeyTrait;
+    use SecretTrait;
+
 }

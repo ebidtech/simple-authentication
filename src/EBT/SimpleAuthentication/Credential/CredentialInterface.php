@@ -12,24 +12,16 @@
 namespace EBT\SimpleAuthentication\Credential;
 
 use EBT\SimpleAuthentication\Common\IdentifiableInterface;
-use EBT\SimpleAuthentication\Common\MatchableInterface;
 use EBT\SimpleAuthentication\Common\ToArrayInterface;
 use EBT\SimpleAuthentication\Common\FromArrayInterface;
-use EBT\SimpleAuthentication\Common\ActiveInterface;
-use EBT\SimpleAuthentication\Common\ExpiredInterface;
-use EBT\SimpleAuthentication\Common\LockedInterface;
 
 /**
- * CredentialInterface
+ * CredentialInterface, a credential represents a set of data that is usable to authenticate.
  */
 interface CredentialInterface extends
  IdentifiableInterface,
- MatchableInterface,
  ToArrayInterface,
  FromArrayInterface,
- ActiveInterface,
- ExpiredInterface,
- LockedInterface,
  \JsonSerializable
 {
 }
