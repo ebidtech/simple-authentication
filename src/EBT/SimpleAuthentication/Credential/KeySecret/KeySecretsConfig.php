@@ -42,6 +42,8 @@ class KeySecretsConfig extends CredentialsConfig
      */
     public static function fromArray(array $data)
     {
+        $keySecretsConfig = array();
+
         foreach ($data as $keySecretConfigArr) {
             if (!is_array($keySecretConfigArr)) {
                 throw new InvalidArgumentException(
