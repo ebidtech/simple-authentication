@@ -14,7 +14,7 @@
     "minimum-stability": "stable",
     "require": {
         "php": ">=5.4.0",
-        "ebidtech/collection": "~1.1.2",
+        "ebidtech/collection": "1.1.*",
         "ebidtech/config-loader": "1.1.*",
         "symfony/yaml": ">=2.2.0,<3.0"
     },
