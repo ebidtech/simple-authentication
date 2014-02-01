@@ -19,9 +19,9 @@ use EBT\SimpleAuthentication\Common\FromArrayInterface;
  * CredentialInterface, a credential represents a set of data that is usable to authenticate.
  */
 interface CredentialInterface extends
- IdentifiableInterface,
- ToArrayInterface,
- FromArrayInterface,
- \JsonSerializable
+    IdentifiableInterface,
+    ToArrayInterface,
+    FromArrayInterface,
+    \JsonSerializable
 {
 }

@@ -121,15 +121,41 @@ class KeySecretConfig implements CredentialConfigInterface
             throw new InvalidArgumentException('At key secret config from array missing the credential');
         }
 
-        $active = isset($data[static::ACTIVE_KEY]) ? $data[static::ACTIVE_KEY] : static::DEFAULT_ACTIVE;
-        $expired = isset($data[static::EXPIRED_KEY]) ? $data[static::EXPIRED_KEY] : static::DEFAULT_EXPIRED;
-        $locked = isset($data[static::LOCKED_KEY]) ? $data[static::LOCKED_KEY] : static::DEFAULT_LOCKED;
-
         return new static(
             KeySecret::fromArray($data[static::CREDENTIAL_KEY]),
-            $active,
-            $expired,
-            $locked
+            static::getFromArrayActive($data),
+            static::getFromArrayExpired($data),
+            static::getFromArrayLocked($data)
         );
+    }
+
+    /**
+     * @param array $data
+     *
+     * @return bool
+     */
+    protected static function getFromArrayActive(array $data)
+    {
+        return isset($data[static::ACTIVE_KEY]) ? $data[static::ACTIVE_KEY] : static::DEFAULT_ACTIVE;
+    }
+
+    /**
+     * @param array $data
+     *
+     * @return bool
+     */
+    protected static function getFromArrayExpired(array $data)
+    {
+        return isset($data[static::EXPIRED_KEY]) ? $data[static::EXPIRED_KEY] : static::DEFAULT_EXPIRED;
+    }
+
+    /**
+     * @param array $data
+     *
+     * @return bool
+     */
+    protected static function getFromArrayLocked(array $data)
+    {
+        return isset($data[static::LOCKED_KEY]) ? $data[static::LOCKED_KEY] : static::DEFAULT_LOCKED;
     }
 }

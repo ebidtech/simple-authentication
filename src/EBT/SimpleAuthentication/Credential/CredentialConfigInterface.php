@@ -22,12 +22,12 @@ use EBT\SimpleAuthentication\Common\FromArrayInterface;
  * the credential itself and other options like active, locked, etc.
  */
 interface CredentialConfigInterface extends
- CredentialEmbeddedInterface,
- ActiveInterface,
- ExpiredInterface,
- LockedInterface,
- ToArrayInterface,
- FromArrayInterface,
- \JsonSerializable
+    CredentialEmbeddedInterface,
+    ActiveInterface,
+    ExpiredInterface,
+    LockedInterface,
+    ToArrayInterface,
+    FromArrayInterface,
+    \JsonSerializable
 {
 }
