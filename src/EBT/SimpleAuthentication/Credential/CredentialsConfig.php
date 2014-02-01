@@ -16,7 +16,7 @@ use EBT\Collection\DirectAccessTrait;
 use EBT\Collection\EmptyTrait;
 use EBT\Collection\IterableTrait;
 use EBT\Collection\CountableTrait;
-use EBT\Collection\GetCollectionTrait;
+use EBT\Collection\GetItemsTrait;
 use EBT\SimpleAuthentication\Exception\InvalidArgumentException;
 use EBT\SimpleAuthentication\Exception\AuthenticationException;
 
@@ -29,12 +29,12 @@ class CredentialsConfig implements CollectionDirectAccessInterface
     use EmptyTrait;
     use IterableTrait;
     use CountableTrait;
-    use GetCollectionTrait;
+    use GetItemsTrait;
 
     /**
      * @var CredentialConfigInterface[]
      */
-    protected $collection;
+    protected $items;
 
     /**
      * @param array $credentialsConfig
@@ -61,7 +61,7 @@ class CredentialsConfig implements CollectionDirectAccessInterface
             );
         }
 
-        $this->collection[$identifier] = $credentialConfig;
+        $this->items[$identifier] = $credentialConfig;
     }
 
     /**
